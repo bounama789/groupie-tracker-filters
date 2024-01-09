@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Groupie Tracker</title>
+
+</head>
+
+<body>
+    <header>
+        <label><a href="/" id="logo">Groupie Tracker</a></label>
+        <div id="search-bar">
+            <div id="Search">
+                <input id="search-input" name="q" list="suggests" type="text" hx-post="/suggest" hx-trigger="keyup" hx-target="#suggests">
+                <datalist  id="suggests" name="suggests"></datalist>
+                <a id="search-button" >Search</a>
+                <a href="#">About-us</a>
+            </div>
+        </div>
+
+        <div class="hamburger-menu">
+
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+            </label>
+
+            <ul class="menu__box">
+                <li class="menu__item"><input type="search" name="" placeholder="Search" id="searchbar"> <span
+                        class="icon">search</span> </li>
+                <li><a class="menu__item" href="#">About Us</a></li>
+            </ul>
+
+        </div>
+
+
+    </header>
+   
+
+    <div id="wrapper">
+        <div id="shadow">
+            <div id="container" class="container">
+                <!-- Filter -->
+
+                <div id="myDiv">
+                    <div class="wrapOne">
+                            
+                            <form action="/filter" method="post">
+                                <div class="grid">
+                                    <div class="one">
+                                        <p >Number of members</p>
+                        <label for="">1
+                        <input type="checkbox" name="checkboxValue1" id="" value="1"></label>
+                        <label for="">2
+                        <input type="checkbox" name="checkboxValue2" id="" value="2"></label>
+                        <label for="">3
+                        <input type="checkbox" name="checkboxValue3" id="" value="3"></label>
+                        <label for="">4
+                        <input type="checkbox" name="checkboxValue4" id="" value="4"></label>
+                        <label for="">5
+                        <input type="checkbox" name="checkboxValue5" id="" value="5"></label>
+                        <label for="">6
+                        <input type="checkbox" name="checkboxValue6" id="" value="6"></label>
+                        <label for="">7
+                        <input type="checkbox" name="checkboxValue7" id="" value="7"></label>
+                        <label for="">8
+                        <input type="checkbox" name="checkboxValue8" id="" value="8"></label>
+                        <br><br>
+                        <select name="option">
+                            <option value="all" >--Chose a location--</option>
+                            {{range .Locations.Index}}
+                            {{range .Locations}}
+                            <option value="{{.}}" >{{.}} </option>
+                            {{end}}
+                            {{end}}
+
+                        </select>
+                                </div>
+                                <div class="two">
+                                <p>Creation date</p>
+                                <label for="" id="selectedValue1" >debut:</label>
+                            <input name="min" type="range" min="1950" max="2023" value="1950"  class="slider" id="myRange1" >
+                            <label for="" id="selectedValue2" >debut:</label>
+                            <input name="max" type="range" min="1950" max="2023" value="2023"  class="slider" id="myRange2">
+                                </div>
+                                <div class="three">
+                                    <p>First album date </p>
+                                    <label for="" id="selectedValue3" >debut:</label>
+                            <input name="minbis" type="range" min="1950" max="2023" value="1950" id="myRange3"  >
+                                    <label for="" id="selectedValue4" >debut:</label>
+                            <input name="maxbis" type="range" min="1950" max="2023" value="2023"  id="myRange4" >
+                                </div>
+                                <div class="four">
+                                    <button  type="submit" >
+                                        <img src="../static/favicons/filter.png" id="filter" alt="filter" width="40px" height="40px"  onclick="showDiv('myDiv')" >
+                                    <button>
+                                </div>
+                                
+                                </div>
+
+                        </form>
+                        
+                    </div>
+                   
+                  </div>
+                 
+                {{range .Artists}}
+                <div class="artist-container">
+                    <a href="artist?id={{.Id}}">
+                        <img src="{{.Image}}" alt="{{.Name}}" class="artist-image">
+                        <p class="artist-name">{{.Name}}</p>
+                    </a>
+                </div>
+                {{end}}
+
+            </div>
+        </div>
+    </div>
+    <script src="../static/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Damion&display=swap");
+
+.left{
+    height: 100%;
+    /* background-color: rgba(82, 79, 79, 0.507); */
+    padding-top: 5%;
+    padding-left: 8%;
+    align-items: center;
+}
+
+.right{
+    background-color: rgba(82, 79, 79, 0.9);
+    padding-right:8%;
+    padding-top: 5%; 
+}
+
+.artistImg{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    
+}
+
+
+.containerArtist{
+    width:100%;
+    padding-bottom: 20px;
+    height: 100%;
+    overflow: auto;
+}
+
+.right ul{
+    margin-bottom: 10%;
+}
+
+.memberList{
+    margin-top: 20px;
+}
+
+.member{
+    color: white;
+    margin : 10px;
+    font-family: Lato;
+    font-size: large;
+    font-weight:lighter;
+}
+
+.dates{
+    margin-left: 50px;
+    padding: 5px;
+}
+
+.concert{
+    margin-top: 5%;
+    height: 50vh;
+    overflow: scroll;
+    background-color: rgb(82, 79, 79);
+    border-radius: 10%;
+    margin-left: 5%;
+    padding-left: 15%;
+}
+
+.concert ul{
+    padding-bottom: 15%;
+}
+
+.right span{
+    background-color:white;
+    padding: 2px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Damion';
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+.name {
+    color: aliceblue;
+    font-size: xx-large;
+    font-family: 'Damion', cursive;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+.creationDate{
+    font-family:  lato;
+    font-style: oblique;
+    color: aliceblue;
+    font-size: large;
+    margin: 5px;
+}
+.firstAlbum{
+    font-family:  lato;
+    font-style: oblique;
+    color: aliceblue;
+    font-size: large;
+    margin: 5px;
+
+}
+#shadow {
+    overflow-y:hidden;
+    background-color: rgba(82, 79, 79, 0.507);
+}
+
+.location{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: large;
+    color: white;
+    word-spacing: 5px;
+}
+@media only screen and (max-width: 900px){
+    .dates{
+        margin-left: 0px;
+    }
+    .concert{
+        padding-left: 2%;
+    }
+    .right{
+        padding-right: 2%;
+    }
+}
+@media only screen and (max-width: 700px){
+   .artistImg{
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    
+  } 
+  .concert{
+    height: 100vh;
+    background-color: rgb(82, 79, 79);
+    border-radius: 10%;
+    padding-left: 2%;
+    overflow: scroll;
+}
+.left{
+    height: 60vh;
+}
+.member{
+    margin-left: 25%;
+}
+ul{
+    padding-left: 0;
+    margin-left: 0;
+}
+.member{
+    font-size: 1em;
+    
+}
+.right span{
+    font-size: 1em;
+    padding: 2px 5px;
+}
+
+}
+
